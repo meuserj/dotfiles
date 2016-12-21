@@ -1,1 +1,3 @@
 npm-debug.log
+/.tmux/plugins/*
+!/.tmux/plugins/tmp
