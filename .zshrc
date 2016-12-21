@@ -54,7 +54,10 @@ export ZSH=$HOME/.oh-my-zsh
 plugins=(gitfast git-extras common-aliases node npm osx vi-mode web-search brew)
 
 source $ZSH/oh-my-zsh.sh
-source $(brew --prefix)/etc/profile.d/z.sh
+if hash brew 2>/dev/null
+then
+    source $(brew --prefix)/etc/profile.d/z.sh
+fi
 
 # User configuration
 
