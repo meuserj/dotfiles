@@ -1,8 +1,8 @@
 BoldAsFont=-1
-Font=Anonymice Powerline
-FontHeight=10
+Font=Meslo LG S DZ for Powerline
+FontHeight=8
 CursorType=block
-BackgroundColour=39,40,34
+BackgroundColour=15,15,15
 ForegroundColour=241,235,235
 CursorColour=241,235,235
 Black=72,72,62
@@ -22,4 +22,3 @@ BoldCyan=102,239,213
 White=172,173,161
 BoldWhite=207,208,194
 Term=xterm-256color
-

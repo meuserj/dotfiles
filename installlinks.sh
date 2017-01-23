@@ -2,6 +2,10 @@ if [ ! -e ~/.minttyrc ]
 then
   ln -s ~/.gitdotfiles/.minttyrc ~/.minttyrc
 fi
+if [ ! -e ~/.Xresources ]
+then
+  ln -s ~/.gitdotfiles/.Xresources ~/.Xresources
+fi
 if [ ! -e ~/.shellprompt.sh ]
 then
   ln -s ~/.gitdotfiles/.shellprompt.sh ~/.shellprompt.sh
