@@ -1,3 +1,4 @@
+source $HOME/.consolefont.sh
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -124,6 +125,7 @@ alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 export PAGER=/usr/local/bin/vimpager
 alias less=$PAGER
 alias zless=$PAGER
+alias clip="nc localhost 8377"
 export EDITOR=$(which vim)
 export PATH=$HOME/bin:$PATH
 export LESS_TERMCAP_mb=$'\E[01;31m'
@@ -143,9 +145,16 @@ cat $HOME/.ssh/id_[rd]sa.pub | ssh $1 'mkdir -p ~/.ssh;cat - >> ~/.ssh/authorize
 }
 
 # setprompt
+uname=$(uname)
 if [ "$TERM" != "dumb" ]; then
     source $HOME/.shellprompt.sh
     source $HOME/.gitdotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-    alias ls='ls -G'
-    alias dir='ls -G'
+    if [ $uname == "Darwin" ]
+    then
+        alias ls='ls -G'
+        alias dir='ls -G'
+    else
+        alias ls='ls --color=auto'
+        alias dir='ls --color=auto'
+    fi
 fi
