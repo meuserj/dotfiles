@@ -1,3 +1,7 @@
+if [ ! -e ~/.consolefont.sh ]
+then
+  ln -s ~/.gitdotfiles/.consolefont.sh ~/.consolefont.sh
+fi
 if [ ! -e ~/.minttyrc ]
 then
   ln -s ~/.gitdotfiles/.minttyrc ~/.minttyrc
