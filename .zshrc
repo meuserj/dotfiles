@@ -124,6 +124,7 @@ alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 export PAGER=/usr/local/bin/vimpager
 alias less=$PAGER
 alias zless=$PAGER
+alias so=source
 export EDITOR=$(which vim)
 export PATH=$HOME/bin:$PATH
 export LESS_TERMCAP_mb=$'\E[01;31m'
