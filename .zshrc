@@ -1,3 +1,4 @@
+#!/bin/zsh
 source $HOME/.consolefont.sh
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -159,3 +160,10 @@ if [ "$TERM" != "dumb" ]; then
         alias dir='ls --color=auto'
     fi
 fi
+
+if [ $uname == CYGWIN_NT-6.3 ]
+then
+    PATH=$PATH:$(cygpath $APPDATA)/npm
+fi
+
+
