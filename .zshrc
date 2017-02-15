@@ -121,7 +121,7 @@ bindkey '^[[B' down-line-or-history
 alias dh='dirs -v'
 alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 
-export PAGER=/usr/local/bin/vimpager
+export PAGER=$(which vimpager)
 alias less=$PAGER
 alias zless=$PAGER
 export EDITOR=$(which vim)
