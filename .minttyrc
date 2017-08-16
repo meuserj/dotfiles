@@ -1,6 +1,6 @@
 BoldAsFont=-1
-Font=Meslo LG S DZ for Powerline
-FontHeight=8
+Font=TerminessTTF NF
+FontHeight=12
 CursorType=block
 BackgroundColour=15,15,15
 ForegroundColour=241,235,235
@@ -22,3 +22,4 @@ BoldCyan=102,239,213
 White=172,173,161
 BoldWhite=207,208,194
 Term=xterm-256color
+FontWeight=500
