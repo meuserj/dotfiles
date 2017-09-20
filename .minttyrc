@@ -23,3 +23,4 @@ White=172,173,161
 BoldWhite=207,208,194
 Term=xterm-256color
 FontWeight=500
+FontSmoothing=partial
