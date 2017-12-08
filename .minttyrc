@@ -1,6 +1,6 @@
 BoldAsFont=-1
-Font=TerminessTTF NF
-FontHeight=12
+Font=RobotoMono NF
+FontHeight=9
 CursorType=block
 BackgroundColour=15,15,15
 ForegroundColour=241,235,235
