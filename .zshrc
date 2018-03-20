@@ -169,3 +169,4 @@ then
 fi
 
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

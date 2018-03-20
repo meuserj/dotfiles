@@ -1,3 +1,4 @@
+#!/bin/bash
 if [ ! -e ~/.consolefont.sh ]
 then
   ln -s ~/.gitdotfiles/.consolefont.sh ~/.consolefont.sh
@@ -29,4 +30,8 @@ fi
 if [ ! -e ~/.zshrc ]
 then
   ln -s ~/.gitdotfiles/.zshrc ~/.zshrc
+fi
+if [ ! -e ~/.fzf.zsh ]
+then
+  ln -s ~/.gitdotfiles/.fzf.zsh ~/.fzf.zsh
 fi
