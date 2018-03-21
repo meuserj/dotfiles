@@ -6,11 +6,14 @@ fi
 
 # Auto-completion
 # ---------------
-[[ $- == *i* ]] && source "/home/pauliadmin/.fzf/shell/completion.zsh" 2> /dev/null
+[[ $- == *i* ]] && source "$HOME/.fzf/shell/completion.zsh" 2> /dev/null
 
 # Key bindings
 # ------------
-[ -f ~/.fzf/shell/key-bindings.zsh ] && source "~/.fzf/shell/key-bindings.zsh"
+if [[ -f "$HOME/.fzf/shell/key-bindings.zsh" ]]
+then
+  source "$HOME/.fzf/shell/key-bindings.zsh"
+fi
 # AG works everywhere and is faster than FZF built-in, so we will default to
 # that if it exists
 if hash ag
