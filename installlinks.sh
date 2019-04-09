@@ -35,3 +35,16 @@ if [ ! -e ~/.fzf.zsh ]
 then
   ln -s ~/.gitdotfiles/.fzf.zsh ~/.fzf.zsh
 fi
+if [ ! -e ~/.vim ]
+then
+  ln -s ~/.vimgit ~/.vim
+fi
+if [ ! -e ~/.vimrc ]
+then
+  ln -s ~/.vim/init.vim ~/.vimrc
+fi
+if [ ! -e ~/.config/nvim ]
+then
+  mkdir -p ~/.config
+  ln -s ~/.vim ~/.config/nvim
+fi
