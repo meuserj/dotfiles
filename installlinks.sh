@@ -1,50 +1,60 @@
 #!/bin/bash
-if [ ! -e ~/.consolefont.sh ]
+if [[ ! -e ~/.consolefont.sh ]]
 then
   ln -s ~/.gitdotfiles/.consolefont.sh ~/.consolefont.sh
 fi
-if [ ! -e ~/.minttyrc ]
+if [[ ! -e ~/.minttyrc ]]
 then
   ln -s ~/.gitdotfiles/.minttyrc ~/.minttyrc
 fi
-if [ ! -e ~/.Xresources ]
+if [[ ! -e ~/.Xresources ]]
 then
   ln -s ~/.gitdotfiles/.Xresources ~/.Xresources
 fi
-if [ ! -e ~/.shellprompt.sh ]
+if [[ ! -e ~/.shellprompt.sh ]]
 then
   ln -s ~/.gitdotfiles/.shellprompt.sh ~/.shellprompt.sh
 fi
-if [ ! -e ~/.tmux ]
+if [[ ! -e ~/.tmux ]]
 then
   ln -s ~/.gitdotfiles/.tmux ~/.tmux
 fi
-if [ ! -e ~/.tmux.conf ]
+if [[ ! -e ~/.tmux.conf ]]
 then
   ln -s ~/.gitdotfiles/.tmux.conf ~/.tmux.conf
 fi
-if [ ! -e ~/.tmuxtheme.conf ]
+if [[ ! -e ~/.tmuxtheme.conf ]]
 then
   ln -s ~/.gitdotfiles/.tmuxtheme.conf ~/.tmuxtheme.conf
 fi
-if [ ! -e ~/.zshrc ]
+if [[ ! -e ~/.zshrc ]]
 then
   ln -s ~/.gitdotfiles/.zshrc ~/.zshrc
 fi
-if [ ! -e ~/.fzf.zsh ]
+if [[ -L ~/.fzf.zsh && -e ~/.gitdotfiles/.fzf.zsh ]]
 then
-  ln -s ~/.gitdotfiles/.fzf.zsh ~/.fzf.zsh
+  rm -f ~/.fzf.zsh
+  mv ~/.gitdotfiles/.fzf.zsh ~/.fzf.zsh
 fi
-if [ ! -e ~/.vim ]
+if [[ ! -e ~/.vim ]]
 then
   ln -s ~/.vimgit ~/.vim
 fi
-if [ ! -e ~/.vimrc ]
+if [[ ! -e ~/.vimrc ]]
 then
   ln -s ~/.vim/init.vim ~/.vimrc
 fi
-if [ ! -e ~/.config/nvim ]
+if [[ ! -e ~/.config/nvim ]]
 then
   mkdir -p ~/.config
   ln -s ~/.vim ~/.config/nvim
+fi
+if [[ ! -d ~/bin ]]
+then
+  mkdir -p ~/bin
+fi
+if [[ ! -L ~/bin/upgrade.sh ]]
+then
+  rm -f ~/bin/upgrade.sh
+  ln -s ~/.gitdotfiles/upgrade.sh ~/bin/upgrade.sh
 fi
