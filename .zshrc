@@ -133,8 +133,17 @@ export PAGER=$(which vimpager)
 alias less=$PAGER
 alias zless=$PAGER
 alias so=source
+alias clip="nc -N localhost 8377"
 alias clip="nc localhost 8377"
-export EDITOR=$(which vim)
+if command -v nvim >/dev/null
+then
+    alias vim=nvim
+    alias vi=nvim
+    alias vimdiff='nvim -d'
+    export EDITOR=nvim
+else
+    export EDITOR=vim
+fi
 export PATH=$HOME/bin:$PATH
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
@@ -176,3 +185,4 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
