@@ -2,6 +2,10 @@
 source $HOME/.consolefont.sh
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+if hash cygpath 2>/dev/null
+then
+    export PATH=$(cygpath $USERPROFILE)/AppData/Roaming/npm:$PATH
+fi
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.gitdotfiles/oh-my-zsh
@@ -185,6 +189,7 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
