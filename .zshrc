@@ -6,6 +6,11 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.gitdotfiles/oh-my-zsh
 
+if [[ -e /usr/libexec/java_home ]]
+then
+    export JAVA_HOME=$(/usr/libexec/java_home)
+fi
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -154,7 +159,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 function ssh-authorize
 {
-cat $HOME/.ssh/id_[rd]sa.pub | ssh $1 'mkdir -p ~/.ssh;cat - >> ~/.ssh/authorized_keys' && ssh $1;
+    cat $HOME/.ssh/id_[rd]sa.pub | ssh $1 'mkdir -p ~/.ssh;cat - >> ~/.ssh/authorized_keys;chmod 700 ~/.ssh;chmod 600 ~/.ssh/authorized_keys' && ssh $1;
 }
 
 # setprompt
@@ -181,3 +186,5 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
