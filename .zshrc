@@ -139,7 +139,6 @@ alias less=$PAGER
 alias zless=$PAGER
 alias so=source
 alias clip="nc -N localhost 8377"
-alias clip="nc localhost 8377"
 if command -v nvim >/dev/null
 then
     alias vim=nvim
@@ -193,3 +192,9 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+if [[ -e $HOME/.perforce_env ]]
+then
+    source $HOME/.perforce_env
+fi
+
