@@ -1,3 +1,4 @@
 npm-debug.log
+.fzf.zsh
 /.tmux/plugins/*
 !/.tmux/plugins/tpm
