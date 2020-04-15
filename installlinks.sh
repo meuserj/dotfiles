@@ -58,3 +58,8 @@ then
   rm -f ~/bin/upgrade.sh
   ln -s ~/.gitdotfiles/upgrade.sh ~/bin/upgrade.sh
 fi
+if [[ ! -L ~/bin/fff ]]
+then
+  rm -f ~/bin/fff
+  ln -s ~/.gitdotfiles/fff/fff ~/bin/fff
+fi
