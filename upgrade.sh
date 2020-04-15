@@ -26,6 +26,7 @@ git pull
 popd
 pushd ~/.gitdotfiles
 git pull
+git submodule init
 git submodule update
 ./installlinks.sh
 popd
