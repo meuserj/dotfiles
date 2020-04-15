@@ -138,7 +138,12 @@ export PAGER=$(which vimpager)
 alias less=$PAGER
 alias zless=$PAGER
 alias so=source
-alias clip="nc -N localhost 8377"
+if [[ "$OSTYPE" == "darwin"* ]]
+then
+    alias clip="nc localhost 8377"
+else
+    alias clip="nc -N localhost 8377"
+fi
 if command -v nvim >/dev/null
 then
     alias vim=nvim
