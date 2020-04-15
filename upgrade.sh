@@ -26,6 +26,8 @@ git pull
 popd
 pushd ~/.gitdotfiles
 git pull
+git submodule update
+./installlinks.sh
 popd
 vim -i NONE -c 'PlugClean!' -c 'PlugUpdate!' -c 'PlugUpgrade!' -c quitall
 zsh ~/.gitdotfiles/oh-my-zsh/tools/upgrade.sh
