@@ -4,7 +4,9 @@ then
   if command -v apt
   then
     sudo apt -y update
+    sudo apt -y autoremove
     sudo apt -y upgrade
+    sudo apt -y autoremove
   elif command -v yum
   then
     sudo yum update
@@ -26,8 +28,7 @@ git pull
 popd
 pushd ~/.gitdotfiles
 git pull
-git submodule init
-git submodule update
+git submodule update --remote
 ./installlinks.sh
 popd
 vim -i NONE -c 'PlugClean!' -c 'PlugUpdate!' -c 'PlugUpgrade!' -c quitall
