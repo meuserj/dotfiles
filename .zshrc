@@ -62,8 +62,9 @@ fi
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(gitfast git-extras common-aliases node npm osx vi-mode web-search)
+plugins=(bgnotify catimg command-not-found common-aliases compleat copydir copyfile dash debian direnv emoji emoji-clock extract fbterm fzf git-extras gitfast gitignore globalias gnu-utils iterm2 jira jsontools jump magic-enter mosh nmap node npx npm osx profiles ripgrep rsync safe-paste systemadmin systemd thefuck tmux ubuntu vi-mode web-search)
 
+DISABLE_AUTO_UPDATE="true"
 source $ZSH/oh-my-zsh.sh
 if hash brew 2>/dev/null
 then
@@ -132,7 +133,6 @@ bindkey '^[[A' up-line-or-history
 bindkey '^[[B' down-line-or-history
 
 alias dh='dirs -v'
-alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 
 export PAGER=$(which vimpager)
 alias less=$PAGER
