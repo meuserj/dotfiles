@@ -62,7 +62,94 @@ fi
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(bgnotify catimg command-not-found common-aliases compleat copydir copyfile dash debian direnv emoji emoji-clock extract fbterm fzf git-extras gitfast gitignore globalias gnu-utils iterm2 jira jsontools jump magic-enter mosh nmap node npx npm osx profiles ripgrep rsync safe-paste systemadmin systemd thefuck tmux ubuntu vi-mode web-search)
+plugins=(\
+    bgnotify\
+    common-aliases\
+    compleat\
+    copydir\
+    copyfile\
+    emoji\
+    emoji-clock\
+    extract\
+    globalias\
+    gnu-utils\
+    jira\
+    jsontools\
+    jump\
+    magic-enter\
+    profiles\
+    safe-paste\
+    systemadmin\
+    vi-mode\
+    web-search\
+)
+if [[ -f /etc/os-release ]]
+then
+    source /etc/os-release
+    if [[ $ID == "debian" ]]
+    then
+        plugins+=(debian)
+    elif [[ $ID == "ubuntu" ]]
+    then
+        plugins+=(ubuntu)
+    fi
+fi
+if command -v convert >/dev/null
+then
+    plugins+=(catimg)
+fi
+if command -v command-not-found >/dev/null
+then
+    plugins+=(command-not-found)
+fi
+if command -v direnv >/dev/null
+then
+    plugins+=(direnv)
+fi
+if [[ $(uname -s) == "Linux" ]]
+then
+    plugins+=(fbterm systemd)
+fi
+if [[ -f $HOME/.fzf ]]
+then
+    plugins+=(fzf)
+fi
+if command -v git >/dev/null
+then
+    plugins+=(git-extras gitfast gitignore)
+fi
+if [[ $(uname -s) == "Darwin" ]]
+then
+    plugins+=(iterm2 osx)
+fi
+if command -v mosh >/dev/null
+then
+    plugins+=(mosh)
+fi
+if command -v nmap >/dev/null
+then
+    plugins+=(nmap)
+fi
+if command -v node >/dev/null
+then
+    plugins+=(node npx npm)
+fi
+if command -v rg >/dev/null
+then
+    plugins+=(ripgrep)
+fi
+if command -v rsync >/dev/null
+then
+    plugins+=(rsync)
+fi
+if command -v thefuck >/dev/null
+then
+    plugins+=(thefuck)
+fi
+if command -v tmux >/dev/null
+then
+    plugins+=(tmux)
+fi
 
 DISABLE_AUTO_UPDATE="true"
 source $ZSH/oh-my-zsh.sh
@@ -134,9 +221,12 @@ bindkey '^[[B' down-line-or-history
 
 alias dh='dirs -v'
 
-export PAGER=$(which vimpager)
-alias less=$PAGER
-alias zless=$PAGER
+if command -v vimpager >/dev/null
+then
+    export PAGER=$(which vimpager)
+    alias less=$PAGER
+    alias zless=$PAGER
+fi
 alias so=source
 if [[ "$OSTYPE" == "darwin"* ]]
 then
