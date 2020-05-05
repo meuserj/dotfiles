@@ -29,6 +29,8 @@ popd
 pushd ~/.gitdotfiles
 git pull
 git submodule update --remote
+git submodule foreach git checkout master
+git submodule foreach git pull
 ./installlinks.sh
 popd
 vim -i NONE -c 'PlugClean!' -c 'PlugUpdate!' -c 'PlugUpgrade!' -c quitall
