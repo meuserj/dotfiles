@@ -265,13 +265,18 @@ uname=$(uname)
 if [ "$TERM" != "dumb" ]; then
     source $HOME/.shellprompt.sh
     source $HOME/.gitdotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-    if [ $uname == "Darwin" ]
+    if command -v lsd >/dev/null
     then
-        alias ls='ls -G'
-        alias dir='ls -G'
+        alias ls='lsd'
     else
-        alias ls='ls --color=auto'
-        alias dir='ls --color=auto'
+        if [ $uname == "Darwin" ]
+        then
+            alias ls='ls -G'
+            alias dir='ls -G'
+        else
+            alias ls='ls --color=auto'
+            alias dir='ls --color=auto'
+        fi
     fi
 fi
 
