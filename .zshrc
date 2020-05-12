@@ -108,7 +108,7 @@ then
 fi
 if [[ $(uname -s) == "Linux" ]]
 then
-    plugins+=(fbterm systemd)
+    plugins+=(systemd)
 fi
 if [[ -f $HOME/.fzf ]]
 then
