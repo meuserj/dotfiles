@@ -263,6 +263,15 @@ function ssh-authorize
 # setprompt
 uname=$(uname)
 if [ "$TERM" != "dumb" ]; then
+    if [[ -e $HOME/.vim/plugged/gruvbox/ ]]
+    then
+        if [[ $(uname -s) == "Darwin" ]]
+        then
+            source $HOME/.vim/plugged/gruvbox/gruvbox_256palette_osx.sh
+        else
+            source $HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh
+        fi
+    fi
     source $HOME/.shellprompt.sh
     source $HOME/.gitdotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
     if command -v lsd >/dev/null
