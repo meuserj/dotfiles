@@ -263,14 +263,9 @@ function ssh-authorize
 # setprompt
 uname=$(uname)
 if [ "$TERM" != "dumb" ]; then
-    if [[ -e $HOME/.vim/plugged/gruvbox/ ]]
+    if [[ -f $HOME/.vim/plugged/gruvbox/gruvbox_256palette_osx.sh ]]
     then
-        if [[ $LC_TERMINAL == "iTerm2" ]]
-        then
-            source $HOME/.vim/plugged/gruvbox/gruvbox_256palette_osx.sh
-        else
-            source $HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh
-        fi
+        source $HOME/.vim/plugged/gruvbox/gruvbox_256palette_osx.sh
     fi
     source $HOME/.shellprompt.sh
     source $HOME/.gitdotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
