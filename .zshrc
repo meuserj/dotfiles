@@ -265,7 +265,7 @@ uname=$(uname)
 if [ "$TERM" != "dumb" ]; then
     if [[ -e $HOME/.vim/plugged/gruvbox/ ]]
     then
-        if [[ $(uname -s) == "Darwin" ]]
+        if [[ $LC_TERMINAL == "iTerm2" ]]
         then
             source $HOME/.vim/plugged/gruvbox/gruvbox_256palette_osx.sh
         else
