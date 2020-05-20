@@ -12,6 +12,10 @@ then
     sudo yum update
     sudo yum upgrade
   fi
+  if command -v gnome-shell-extension-installer
+  then
+    gnome-shell-extension-installer --yes --update --restart-shell
+  fi
 elif [[ "$OSTYPE" == "darwin"* ]]
 then
   if command -v brew

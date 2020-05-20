@@ -132,7 +132,7 @@ then
 fi
 if command -v node >/dev/null
 then
-    plugins+=(node npx npm)
+    plugins+=(node npm)
 fi
 if command -v rg >/dev/null
 then
