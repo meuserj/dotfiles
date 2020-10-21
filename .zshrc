@@ -63,15 +63,12 @@ fi
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(\
+    alias-finder\
     bgnotify\
     common-aliases\
-    compleat\
-    copydir\
-    copyfile\
     emoji\
     emoji-clock\
     extract\
-    globalias\
     gnu-utils\
     jira\
     jsontools\
@@ -80,7 +77,6 @@ plugins=(\
     profiles\
     safe-paste\
     systemadmin\
-    vi-mode\
     web-search\
 )
 if [[ -f /etc/os-release ]]
@@ -88,15 +84,35 @@ then
     source /etc/os-release
     if [[ $ID == "debian" ]]
     then
-        plugins+=(debian)
+        plugins+=(ubuntu)
     elif [[ $ID == "ubuntu" ]]
     then
         plugins+=(ubuntu)
     fi
 fi
+if command -v adb >/dev/null
+then
+    plugins+=(adb)
+fi
+if command -v aws >/dev/null
+then
+    plugins+=(aws)
+fi
+if command -v brew >/dev/null
+then
+    plugins+=(brew)
+fi
+if command -v cargo >/dev/null
+then
+    plugins+=(cargo)
+fi
 if command -v convert >/dev/null
 then
     plugins+=(catimg)
+fi
+if command -v chroma >/dev/null || command -v pygmentize  >/dev/null
+then
+    plugins+=(colorize)
 fi
 if command -v command-not-found >/dev/null
 then
@@ -116,7 +132,7 @@ then
 fi
 if command -v git >/dev/null
 then
-    plugins+=(git-extras gitfast gitignore)
+    plugins+=(git-extras gitfast gitignore git)
 fi
 if [[ $(uname -s) == "Darwin" ]]
 then
@@ -137,6 +153,14 @@ fi
 if command -v rg >/dev/null
 then
     plugins+=(ripgrep)
+fi
+if command -v rustc >/dev/null
+then
+    plugins+=(rust)
+fi
+if command -v rustup >/dev/null
+then
+    plugins+=(rustup)
 fi
 if command -v rsync >/dev/null
 then
