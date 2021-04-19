@@ -21,7 +21,9 @@ then
   if command -v brew
   then
     brew update
+    brew cleanup
     brew upgrade
+    softwareupdate -i -a
   fi
 elif [[ "$OSTYPE" == "cygwin" ]]
 then
