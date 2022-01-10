@@ -103,9 +103,9 @@ if command -v brew >/dev/null
 then
     plugins+=(brew)
 fi
-if command -v cargo >/dev/null
+if command -v rustc >/dev/null
 then
-    plugins+=(cargo)
+    plugins+=(rust)
 fi
 if command -v convert >/dev/null
 then
@@ -158,10 +158,6 @@ fi
 if command -v rustc >/dev/null
 then
     plugins+=(rust)
-fi
-if command -v rustup >/dev/null
-then
-    plugins+=(rustup)
 fi
 if command -v rsync >/dev/null
 then
