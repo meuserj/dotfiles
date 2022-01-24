@@ -103,10 +103,6 @@ if command -v brew >/dev/null
 then
     plugins+=(brew)
 fi
-if command -v rustc >/dev/null
-then
-    plugins+=(rust)
-fi
 if command -v convert >/dev/null
 then
     plugins+=(catimg)
@@ -137,7 +133,7 @@ then
 fi
 if [[ $(uname -s) == "Darwin" ]]
 then
-    plugins+=(iterm2 osx)
+    plugins+=(iterm2 macos)
 fi
 if command -v mosh >/dev/null
 then
