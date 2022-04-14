@@ -12,6 +12,10 @@ then
     sudo yum update
     sudo yum upgrade
   fi
+  if command -v snap
+  then
+      sudo snap refresh
+  fi
   if command -v gnome-shell-extension-installer
   then
     gnome-shell-extension-installer --yes --update --restart-shell
