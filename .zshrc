@@ -260,6 +260,7 @@ then
 else
     export EDITOR=vim
 fi
+alias wttr="curl wttr.in/indianapolis?u"
 export PATH=$HOME/bin:$PATH
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
