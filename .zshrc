@@ -78,7 +78,6 @@ plugins=(\
     safe-paste\
     systemadmin\
     web-search\
-    nvm\
 )
 if [[ -f /etc/os-release ]]
 then
