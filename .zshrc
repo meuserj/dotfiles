@@ -2,6 +2,7 @@
 source $HOME/.consolefont.sh
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export TERM=xterm-256color
 if hash cygpath 2>/dev/null
 then
     export PATH=$(cygpath $USERPROFILE)/AppData/Roaming/npm:$PATH
@@ -280,10 +281,6 @@ function ssh-authorize
 # setprompt
 uname=$(uname)
 if [ "$TERM" != "dumb" ]; then
-    if [[ -f $HOME/.vim/plugged/gruvbox/gruvbox_256palette_osx.sh ]]
-    then
-        source $HOME/.vim/plugged/gruvbox/gruvbox_256palette_osx.sh
-    fi
     source $HOME/.shellprompt.sh
     source $HOME/.gitdotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
     if command -v lsd >/dev/null
