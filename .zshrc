@@ -2,6 +2,7 @@
 source $HOME/.consolefont.sh
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export TERM=xterm-256color
 if hash cygpath 2>/dev/null
 then
     export PATH=$(cygpath $USERPROFILE)/AppData/Roaming/npm:$PATH
@@ -78,7 +79,6 @@ plugins=(\
     safe-paste\
     systemadmin\
     web-search\
-    nvm\
 )
 if [[ -f /etc/os-release ]]
 then
@@ -102,10 +102,6 @@ fi
 if command -v brew >/dev/null
 then
     plugins+=(brew)
-fi
-if command -v cargo >/dev/null
-then
-    plugins+=(cargo)
 fi
 if command -v convert >/dev/null
 then
@@ -137,7 +133,7 @@ then
 fi
 if [[ $(uname -s) == "Darwin" ]]
 then
-    plugins+=(iterm2 osx)
+    plugins+=(iterm2 macos)
 fi
 if command -v mosh >/dev/null
 then
@@ -158,10 +154,6 @@ fi
 if command -v rustc >/dev/null
 then
     plugins+=(rust)
-fi
-if command -v rustup >/dev/null
-then
-    plugins+=(rustup)
 fi
 if command -v rsync >/dev/null
 then
@@ -268,6 +260,7 @@ then
 else
     export EDITOR=vim
 fi
+alias wttr="curl wttr.in/indianapolis?u"
 export PATH=$HOME/bin:$PATH
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
@@ -288,10 +281,6 @@ function ssh-authorize
 # setprompt
 uname=$(uname)
 if [ "$TERM" != "dumb" ]; then
-    if [[ -f $HOME/.vim/plugged/gruvbox/gruvbox_256palette_osx.sh ]]
-    then
-        source $HOME/.vim/plugged/gruvbox/gruvbox_256palette_osx.sh
-    fi
     source $HOME/.shellprompt.sh
     source $HOME/.gitdotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
     if command -v lsd >/dev/null
