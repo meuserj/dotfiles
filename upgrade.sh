@@ -38,12 +38,20 @@ git pull
 popd
 pushd ~/.gitdotfiles
 git pull
+git submodule init
 git submodule update --remote
 git submodule foreach git checkout master
 git submodule foreach git pull
 ./installlinks.sh
 popd
-vim -i NONE -c 'PlugClean!' -c 'PlugUpdate!' -c 'PlugUpgrade!' -c quitall
+if [[ -e $(type -P vim) ]]
+then
+  $(type -P vim) -i NONE -c 'PlugClean!' -c 'PlugUpdate!' -c 'PlugUpgrade!' -c quitall
+fi
+if [[ -e $(type -P nvim) ]]
+then
+  $(type -P nvim) -i NONE -c 'PlugClean!' -c 'PlugUpdate!' -c 'PlugUpgrade!' -c quitall
+fi
 zsh ~/.gitdotfiles/oh-my-zsh/tools/upgrade.sh
 ~/.tmux/plugins/tpm/bin/clean_plugins
 ~/.tmux/plugins/tpm/bin/update_plugins all
