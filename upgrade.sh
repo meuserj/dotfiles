@@ -34,15 +34,19 @@ then
   wget -N http://cygwin.com/setup-x86_64.exe && ./setup-x86_64.exe --no-desktop --no-shortcuts --no-startmenu --quiet-mode && rm -f setup-x86_64.exe
 fi
 pushd ~/.vimgit
+git stash
 git pull
+git stash pop
 popd
 pushd ~/.gitdotfiles
+git stash
 git pull
 git submodule init
 git submodule update --remote
 git submodule foreach git checkout master
 git submodule foreach git pull
 ./installlinks.sh
+git stash pop
 popd
 if [[ -e $(type -P vim) ]]
 then
