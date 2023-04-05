@@ -242,12 +242,6 @@ bindkey '^[[B' down-line-or-history
 
 alias dh='dirs -v'
 
-if command -v vimpager >/dev/null
-then
-    export PAGER=$(which vimpager)
-    alias less=$PAGER
-    alias zless=$PAGER
-fi
 alias so=source
 if [[ "$OSTYPE" == "darwin"* ]]
 then
