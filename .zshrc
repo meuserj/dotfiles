@@ -3,6 +3,10 @@ source $HOME/.consolefont.sh
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export TERM=xterm-256color
+if [[ -e $HOME/.openai.key ]]
+then
+    export OPENAI_API_KEY=$(<$HOME/.openai.key)
+fi
 if hash cygpath 2>/dev/null
 then
     export PATH=$(cygpath $USERPROFILE)/AppData/Roaming/npm:$PATH
