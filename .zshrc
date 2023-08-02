@@ -71,10 +71,13 @@ plugins=(\
     alias-finder\
     bgnotify\
     common-aliases\
+    cp\
     emoji\
     emoji-clock\
     extract\
     gnu-utils\
+    history\
+    isodate\
     jira\
     jsontools\
     jump\
@@ -82,7 +85,10 @@ plugins=(\
     profiles\
     safe-paste\
     systemadmin\
+    universalarchive\
+    vi-mode\
     web-search\
+    z\
 )
 if [[ -f /etc/os-release ]]
 then
@@ -123,6 +129,14 @@ if command -v direnv >/dev/null
 then
     plugins+=(direnv)
 fi
+if command -v docker >/dev/null
+then
+    plugins+=(docker)
+fi
+if command -v docker-compose >/dev/null
+then
+    plugins+=(docker-compose)
+fi
 if [[ $(uname -s) == "Linux" ]]
 then
     plugins+=(systemd fbterm)
@@ -134,6 +148,10 @@ fi
 if command -v git >/dev/null
 then
     plugins+=(git-extras gitfast gitignore git)
+fi
+if command -v grc >/dev/null
+then
+    plugins+=(grc)
 fi
 if [[ $(uname -s) == "Darwin" ]]
 then
@@ -147,9 +165,9 @@ if command -v nmap >/dev/null
 then
     plugins+=(nmap)
 fi
-if command -v node >/dev/null
+if command -v npm >/dev/null
 then
-    plugins+=(node npm)
+    plugins+=(npm)
 fi
 if command -v rg >/dev/null
 then
@@ -178,6 +196,8 @@ if hash brew 2>/dev/null
 then
     source $(brew --prefix)/etc/profile.d/z.sh
 fi
+
+JIRA_NAME=john.meuser@genesys.com
 
 unalias fd
 
