@@ -142,12 +142,6 @@ if [[ $(uname -s) == "Linux" ]]
 then
     plugins+=(systemd fbterm)
 fi
-=======
-# if [[ $(uname -s) == "Linux" ]]
-# then
-#     plugins+=(systemd fbterm)
-# fi
->>>>>>> Stashed changes
 if [[ -f $HOME/.fzf ]]
 then
     plugins+=(fzf)
