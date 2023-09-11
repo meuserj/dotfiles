@@ -129,7 +129,6 @@ if command -v direnv >/dev/null
 then
     plugins+=(direnv)
 fi
-<<<<<<< Updated upstream
 if command -v docker >/dev/null
 then
     plugins+=(docker)
