@@ -14,3 +14,6 @@
 	path = .tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
 	branch = master
+[submodule "neofetch"]
+	path = neofetch
+	url = https://github.com/dylanaraps/neofetch.git

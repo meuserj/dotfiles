@@ -194,7 +194,10 @@ DISABLE_AUTO_UPDATE="true"
 source $ZSH/oh-my-zsh.sh
 if hash brew 2>/dev/null
 then
-    source $(brew --prefix)/etc/profile.d/z.sh
+    if [[ -e $(brew --prefix)/etc/profile.d/z.sh ]]
+    then
+        source $(brew --prefix)/etc/profile.d/z.sh
+    fi
 fi
 
 JIRA_NAME=john.meuser@genesys.com

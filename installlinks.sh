@@ -63,3 +63,8 @@ then
   rm -f ~/bin/fff
   ln -s ~/.gitdotfiles/fff/fff ~/bin/fff
 fi
+if [[ ! -L ~/bin/neofetch ]]
+then
+  rm -f ~/bin/neofetch
+  ln -s ~/.gitdotfiles/neofetch/neofetch ~/bin/neofetch
+fi
