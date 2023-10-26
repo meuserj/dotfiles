@@ -189,6 +189,14 @@ if command -v tmux >/dev/null
 then
     plugins+=(tmux)
 fi
+if command -v docker >/dev/null
+then
+    plugins+=(docker)
+fi
+if command -v docker-compose >/dev/null
+then
+    plugins+=(docker-compose)
+fi
 
 DISABLE_AUTO_UPDATE="true"
 source $ZSH/oh-my-zsh.sh
