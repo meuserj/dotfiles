@@ -16,6 +16,10 @@ then
   then
       sudo snap refresh
   fi
+  if command -v flatpak
+  then
+    sudo flatpak -y update
+  fi
   if command -v gnome-shell-extension-installer
   then
     gnome-shell-extension-installer --yes --update --restart-shell
