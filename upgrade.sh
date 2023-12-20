@@ -11,15 +11,15 @@ do
   esac
 done
 
-if [ "$OSTYPE" == "linux-gnu" ]
+if [[ "$OSTYPE" == "linux-gnu" ]]
 then
-  if command -v apt && [ "$os" == "yes" ]
+  if command -v apt && [[ "$os" == "yes" ]]
   then
     sudo apt -y update
     sudo apt -y autoremove
     sudo apt -y upgrade
     sudo apt -y autoremove
-  elif command -v yum && [ "$os" == "yes" ]
+  elif command -v yum && [[ "$os" == "yes" ]]
   then
     sudo yum update
     sudo yum upgrade
@@ -36,19 +36,19 @@ then
   then
     gnome-shell-extension-installer --yes --update --restart-shell
   fi
-elif [ "$OSTYPE" == "darwin"* ]
+elif [[ "$OSTYPE" =~ "darwin" ]]
 then
   if command -v brew
   then
     brew update
     brew cleanup
     brew upgrade
-    if [ "$os" == "yes" ]
+    if [[ "$os" == "yes" ]]
     then
       softwareupdate -i -a
     fi
   fi
-elif [ "$OSTYPE" == "cygwin" ] && [ "$os" == "yes" ]
+elif [[ "$OSTYPE" == "cygwin" ]] && [[ "$os" == "yes" ]]
 then
   wget -N http://cygwin.com/setup-x86_64.exe && ./setup-x86_64.exe --no-desktop --no-shortcuts --no-startmenu --quiet-mode && rm -f setup-x86_64.exe
 fi
@@ -67,11 +67,11 @@ git submodule foreach git pull
 ./installlinks.sh
 git stash pop
 popd
-if [ -e $(type -P vim) ]
+if [[ -e $(type -P vim) ]]
 then
   $(type -P vim) -i NONE -c 'PlugClean!' -c 'PlugUpdate!' -c 'PlugUpgrade!' -c quitall
 fi
-if [ -e $(type -P nvim) ]
+if [[ -e $(type -P nvim) ]]
 then
   $(type -P nvim) -i NONE -c 'PlugClean!' -c 'PlugUpdate!' -c 'PlugUpgrade!' -c quitall
 fi
