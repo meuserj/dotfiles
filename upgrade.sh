@@ -48,6 +48,10 @@ then
       softwareupdate -i -a
     fi
   fi
+  if command -v mas
+  then
+    mas upgrade
+  fi
 elif [[ "$OSTYPE" == "cygwin" ]] && [[ "$os" == "yes" ]]
 then
   wget -N http://cygwin.com/setup-x86_64.exe && ./setup-x86_64.exe --no-desktop --no-shortcuts --no-startmenu --quiet-mode && rm -f setup-x86_64.exe
