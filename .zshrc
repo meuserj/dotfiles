@@ -1,7 +1,8 @@
 #!/bin/zsh
 source $HOME/.consolefont.sh
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/builds/tools_main_systest:$PATH
+# export LD_LIBRARY_PATH=$HOME/builds/tools_main_systest/ruby_libs/i3trace/i3trace_bins/linux:$LD_LIBRARY_PATH
 export TERM=xterm-256color
 if [[ -e $HOME/.openai.key ]]
 then
@@ -342,6 +343,11 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 if [[ -e $HOME/.perforce_env ]]
 then
     source $HOME/.perforce_env
+fi
+
+if [[ -e $HOME/.inin_env.sh ]]
+then
+    source $HOME/.inin_env.sh
 fi
 
 
