@@ -70,7 +70,6 @@ fi
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(\
     alias-finder\
-    bgnotify\
     common-aliases\
     cp\
     emoji\
