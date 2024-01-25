@@ -272,6 +272,10 @@ bindkey '^[[A' up-line-or-history
 bindkey '^[[B' down-line-or-history
 
 alias dh='dirs -v'
+if command -v batcat >/dev/null
+then
+    alias bat=batcat
+fi
 
 alias so=source
 if [[ "$OSTYPE" == "darwin"* ]]
