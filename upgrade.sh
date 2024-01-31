@@ -13,7 +13,10 @@ done
 
 if [[ "$OSTYPE" == "linux-gnu" ]]
 then
-  if command -v apt && [[ "$os" == "yes" ]]
+  if command -v nala && [[ "$os" == "yes" ]]
+  then
+    sudo nala upgrade -y
+  elif command -v apt && [[ "$os" == "yes" ]]
   then
     sudo apt -y update
     sudo apt -y autoremove
