@@ -48,7 +48,7 @@ then
     brew upgrade
     if [[ "$os" == "yes" ]]
     then
-      softwareupdate -i -a
+      sudo softwareupdate -i -a
     fi
   fi
   if command -v mas

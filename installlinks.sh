@@ -3,6 +3,10 @@ if [[ ! -e ~/.alacritty.yml ]]
 then
   ln -s ~/.gitdotfiles/.alacritty.yml ~/.alacritty.yml
 fi
+if [[ ! -e ~/.alacritty.toml ]]
+then
+  ln -s ~/.gitdotfiles/.alacritty.toml ~/.alacritty.toml
+fi
 if [[ ! -e ~/.consolefont.sh ]]
 then
   ln -s ~/.gitdotfiles/.consolefont.sh ~/.consolefont.sh
