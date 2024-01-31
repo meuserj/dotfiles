@@ -1,4 +1,8 @@
 #!/bin/bash
+if [[ ! -e ~/.alacritty.yml ]]
+then
+  ln -s ~/.gitdotfiles/.alacritty.yml ~/.alacritty.yml
+fi
 if [[ ! -e ~/.consolefont.sh ]]
 then
   ln -s ~/.gitdotfiles/.consolefont.sh ~/.consolefont.sh
