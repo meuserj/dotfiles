@@ -246,6 +246,11 @@ then
     alias a='alacritty msg create-window -e'
 fi
 
+if command -v theme.sh >/dev/null
+then
+    theme.sh gruvbox-dark
+fi
+
 if [[ -z "$TMUX" ]] ;then
     ID="`tmux ls | grep -vm1 attached | cut -d: -f1`" # get the id of a deattached session
     if [[ -z "$ID" ]] ;then # if not available create a new one
@@ -369,3 +374,5 @@ if [[ -v TMUX ]]
 then
     tmux list-panes -s | awk 'END { if(NR == 1 && $4 ~ "0/") system("neofetch")}'
 fi
+
+eval $(thefuck --alias)

@@ -17,3 +17,6 @@
 [submodule "neofetch"]
 	path = neofetch
 	url = https://github.com/dylanaraps/neofetch.git
+[submodule "theme.sh"]
+	path = theme.sh
+	url = https://github.com/lemnos/theme.sh.git
