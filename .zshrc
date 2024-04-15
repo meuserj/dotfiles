@@ -374,5 +374,3 @@ if [[ -v TMUX ]]
 then
     tmux list-panes -s | awk 'END { if(NR == 1 && $4 ~ "0/") system("neofetch")}'
 fi
-
-eval $(thefuck --alias)
