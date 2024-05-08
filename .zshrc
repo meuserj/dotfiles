@@ -372,5 +372,10 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:$HOME/.rvm/bin"
 if [[ -v TMUX ]]
 then
-    tmux list-panes -s | awk 'END { if(NR == 1 && $4 ~ "0/") system("neofetch")}'
+    if command -v fastfetch >/dev/null
+    then
+        tmux list-panes -s | awk 'END { if(NR == 1 && $4 ~ "0/") system("fastfetch")}'
+    else if command -v neofetch >/dev/null
+        tmux list-panes -s | awk 'END { if(NR == 1 && $4 ~ "0/") system("neofetch")}'
+    fi
 fi
