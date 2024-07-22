@@ -320,7 +320,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 function ssh-authorize
 {
-    cat $HOME/.ssh/id_[rd]sa.pub | ssh $1 'mkdir -p ~/.ssh;cat - >> ~/.ssh/authorized_keys;chmod 700 ~/.ssh;chmod 600 ~/.ssh/authorized_keys' && ssh $1;
+    cat $HOME/.ssh/id_*.pub | ssh $1 'mkdir -p ~/.ssh;cat - >> ~/.ssh/authorized_keys;chmod 700 ~/.ssh;chmod 600 ~/.ssh/authorized_keys' && ssh $1;
 }
 
 # setprompt
