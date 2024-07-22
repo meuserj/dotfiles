@@ -284,6 +284,7 @@ bindkey '^[[B' down-line-or-history
 alias dh='dirs -v'
 if command -v batcat >/dev/null
 then
+    export BAT_THEME=gruvbox-dark
     alias bat=batcat
 fi
 
@@ -312,6 +313,7 @@ export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
+
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
