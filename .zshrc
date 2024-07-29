@@ -101,10 +101,6 @@ then
         plugins+=(ubuntu)
     fi
 fi
-if command -v adb >/dev/null
-then
-    plugins+=(adb)
-fi
 if command -v aws >/dev/null
 then
     plugins+=(aws)
@@ -168,10 +164,6 @@ fi
 if command -v npm >/dev/null
 then
     plugins+=(npm)
-fi
-if command -v rg >/dev/null
-then
-    plugins+=(ripgrep)
 fi
 if command -v rustc >/dev/null
 then
