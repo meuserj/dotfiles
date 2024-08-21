@@ -38,6 +38,7 @@ then
   fi
 elif [[ "$OSTYPE" =~ "darwin" ]]
 then
+  sudo -v
   if command -v brew
   then
     brew update
