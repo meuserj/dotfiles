@@ -45,11 +45,11 @@ elif [[ "$OSTYPE" =~ "darwin" ]]; then
 elif [[ "$OSTYPE" == "cygwin" ]] && [[ "$os" == "yes" ]]; then
   wget -N http://cygwin.com/setup-x86_64.exe && ./setup-x86_64.exe --no-desktop --no-shortcuts --no-startmenu --quiet-mode && rm -f setup-x86_64.exe
 fi
-pushd ~/.config/nvim
-git stash
-git pull
-git stash pop
-popd
+# pushd ~/.config/nvim
+# git stash
+# git pull
+# git stash pop
+# popd
 pushd ~/.gitdotfiles
 git stash
 git pull
