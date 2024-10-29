@@ -1,4 +1,6 @@
 #!/bin/zsh
+# Amazon Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 source $HOME/.consolefont.sh
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$HOME/builds/tools_main_systest:$HOME/.local/bin:/opt/homebrew/sbin:/opt/homebrew/bin:$PATH
@@ -312,7 +314,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 function ssh-authorize
 {
-    cat $HOME/.ssh/id_*.pub | ssh $1 'mkdir -p ~/.ssh;cat - >> ~/.ssh/authorized_keys;chmod 700 ~/.ssh;chmod 600 ~/.ssh/authorized_keys' && ssh $1;
+    cat $HOME/.ssh/*.pub | ssh $1 'mkdir -p ~/.ssh;cat - >> ~/.ssh/authorized_keys;chmod 700 ~/.ssh;chmod 600 ~/.ssh/authorized_keys' && ssh $1;
 }
 
 function vi-session {
@@ -377,3 +379,6 @@ then
         tmux list-panes -s | awk 'END { if(NR == 1 && $4 ~ "0/") system("neofetch")}'
     fi
 fi
+
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
