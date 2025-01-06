@@ -6,7 +6,7 @@ window:
   decorations_theme_variant: "Dark"
 font:
   normal:
-    family: Iosevka Nerd Font
+    family: IosevkaTerm Nerd Font
     style: Light
   size: 12.0
 colors:
