@@ -1,12 +1,6 @@
 #!/bin/zsh
 # Amazon Q pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
-
-if command -v theme.sh >/dev/null
-then
-    theme.sh gruvbox-dark
-fi
-
 source $HOME/.consolefont.sh
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$HOME/builds/tools_main_systest:$HOME/.local/bin:/opt/homebrew/sbin:/opt/homebrew/bin:$PATH
@@ -248,6 +242,11 @@ unalias fd
 if command -v alacritty >/dev/null
 then
     alias a='alacritty msg create-window -e'
+fi
+
+if command -v theme.sh >/dev/null
+then
+    theme.sh gruvbox-dark
 fi
 
 if [[ -z "$TMUX" ]] ;then
