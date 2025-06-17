@@ -40,6 +40,10 @@ if [[ ! -L ~/bin/upgrade.sh ]]; then
   rm -f ~/bin/upgrade.sh
   ln -s ~/.gitdotfiles/upgrade.sh ~/bin/upgrade.sh
 fi
+if [[ ! -L ~/bin/ollamaPull.sh ]]; then
+  rm -f ~/bin/ollamaPull.sh
+  ln -s ~/.gitdotfiles/ollamaPull.sh ~/bin/ollamaPull.sh
+fi
 if [[ ! -L ~/bin/theme.sh ]]; then
   rm -f ~/bin/theme.sh
   ln -s ~/.gitdotfiles/theme.sh/bin/theme.sh ~/bin/theme.sh
