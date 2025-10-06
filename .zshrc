@@ -18,6 +18,11 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.gitdotfiles/oh-my-zsh
 
+if [[ -e $HOME/.local.zsh ]]
+then
+  source $HOME/.local.zsh
+fi
+
 if [[ -e /usr/libexec/java_home ]]
 then
     export JAVA_HOME=$(/usr/libexec/java_home)
@@ -388,3 +393,4 @@ fi
 
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+
