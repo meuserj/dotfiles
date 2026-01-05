@@ -1,6 +1,8 @@
 #!/bin/zsh
-# Amazon Q pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
+
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
+
 source $HOME/.consolefont.sh
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$HOME/builds/tools_main_systest:$HOME/.local/bin:/opt/homebrew/sbin:/opt/homebrew/bin:$PATH
@@ -294,6 +296,7 @@ fi
 alias so=source
 if [[ "$OSTYPE" == "darwin"* ]]
 then
+    stty discard undef
     alias clip="nc localhost 8377"
 else
     alias clip="nc -N localhost 8377"
@@ -391,6 +394,7 @@ then
     fi
 fi
 
-# Amazon Q post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
 
+
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
