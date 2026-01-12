@@ -81,8 +81,8 @@ plugins=(\
     alias-finder\
     common-aliases\
     cp\
-    emoji\
     emoji-clock\
+    emoji\
     extract\
     gnu-utils\
     history\

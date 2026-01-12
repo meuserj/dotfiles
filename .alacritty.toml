@@ -26,7 +26,7 @@ background = "#282828"
 foreground = "#ebdbb2"
 
 [font]
-size = 12.0
+size = 10.0
 
 [font.normal]
 family = "IosevkaTerm Nerd Font"
@@ -36,3 +36,8 @@ style = "Light"
 decorations_theme_variant = "Dark"
 dynamic_title = true
 opacity = 0.9
+
+[[keyboard.bindings]]
+key = "N"
+mods = "Control|Shift"
+action = "CreateNewWindow"
