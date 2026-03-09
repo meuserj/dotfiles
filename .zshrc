@@ -255,10 +255,10 @@ if command -v theme.sh >/dev/null
 then
     if command -v gsettings &> /dev/null
     then
-        if [[ "$(gsettings get org.gnome.desktop.interface color-scheme)" == *'prefer-dark'* ]]; then
-            theme.sh gruvbox-dark
-        else
+        if [[ "$(gsettings get org.gnome.desktop.interface color-scheme)" == *'default'* ]]; then
             theme.sh gruvbox
+        else
+            theme.sh gruvbox-dark
         fi
     else
         theme.sh gruvbox-dark
