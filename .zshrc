@@ -253,7 +253,16 @@ fi
 
 if command -v theme.sh >/dev/null
 then
-    theme.sh gruvbox-dark
+    if command -v gsettings &> /dev/null
+    then
+        if [[ "$(gsettings get org.gnome.desktop.interface color-scheme)" == *'prefer-dark'* ]]; then
+            theme.sh gruvbox-dark
+        else
+            theme.sh gruvbox
+        fi
+    else
+        theme.sh gruvbox-dark
+    fi
 fi
 
 if [[ -z "$TMUX" ]] ;then
