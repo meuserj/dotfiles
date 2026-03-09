@@ -265,6 +265,31 @@ then
     fi
 fi
 
+# Check if we are connected via SSH
+if [[ -n "$SSH_CLIENT" || -n "$SSH_TTY" ]]; then
+    # We are in a remote session. 
+    # Do not run gsettings. Rely on the forwarded DARK_MODE variable.
+    if [[ "$DARK_MODE" == "false" ]]; then
+        theme.sh gruvbox
+    else
+        theme.sh gruvbox-dark
+    fi
+else
+    # We are on the local machine. Ask GNOME.
+    if command -v gsettings &> /dev/null; then
+        if [[ "$(gsettings get org.gnome.desktop.interface color-scheme)" == *'default'* ]]; then
+            export DARK_MODE="false"
+            theme.sh gruvbox
+        else
+            export DARK_MODE="true"
+            theme.sh gruvbox-dark
+        fi
+    else
+        export DARK_MODE="true"
+        theme.sh gruvbox-dark
+    fi
+fi
+
 if [[ -z "$TMUX" ]] ;then
     ID="`tmux ls | grep -vm1 attached | cut -d: -f1`" # get the id of a deattached session
     if [[ -z "$ID" ]] ;then # if not available create a new one
