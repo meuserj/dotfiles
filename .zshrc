@@ -251,42 +251,31 @@ then
     alias a='alacritty msg create-window -e'
 fi
 
+# Check if we are connected via SSH
 if command -v theme.sh >/dev/null
 then
-    if command -v gsettings &> /dev/null
-    then
-        if [[ "$(gsettings get org.gnome.desktop.interface color-scheme)" == *'default'* ]]; then
+    if [[ -n "$SSH_CLIENT" || -n "$SSH_TTY" ]]; then
+        # We are in a remote session. 
+        # Do not run gsettings. Rely on the forwarded DARK_MODE variable.
+        if [[ "$DARK_MODE" == "false" ]]; then
             theme.sh gruvbox
         else
             theme.sh gruvbox-dark
         fi
     else
-        theme.sh gruvbox-dark
-    fi
-fi
-
-# Check if we are connected via SSH
-if [[ -n "$SSH_CLIENT" || -n "$SSH_TTY" ]]; then
-    # We are in a remote session. 
-    # Do not run gsettings. Rely on the forwarded DARK_MODE variable.
-    if [[ "$DARK_MODE" == "false" ]]; then
-        theme.sh gruvbox
-    else
-        theme.sh gruvbox-dark
-    fi
-else
-    # We are on the local machine. Ask GNOME.
-    if command -v gsettings &> /dev/null; then
-        if [[ "$(gsettings get org.gnome.desktop.interface color-scheme)" == *'default'* ]]; then
-            export DARK_MODE="false"
-            theme.sh gruvbox
+        # We are on the local machine. Ask GNOME.
+        if command -v gsettings &> /dev/null; then
+            if [[ "$(gsettings get org.gnome.desktop.interface color-scheme)" == *'default'* ]]; then
+                export DARK_MODE="false"
+                theme.sh gruvbox
+            else
+                export DARK_MODE="true"
+                theme.sh gruvbox-dark
+            fi
         else
             export DARK_MODE="true"
             theme.sh gruvbox-dark
         fi
-    else
-        export DARK_MODE="true"
-        theme.sh gruvbox-dark
     fi
 fi
 
