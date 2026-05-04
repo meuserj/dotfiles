@@ -12,6 +12,14 @@
           "type": "os"
         },
         {
+          "background": "#504945",
+          "foreground": "#EBDBB2",
+          "powerline_symbol": "\ue0b4",
+          "style": "powerline",
+          "template": " {{ if eq .Name \"zsh\" }}\uebc8{{ else if eq .Name \"bash\" }}\uebca{{ else if eq .Name \"fish\" }}\uf489{{ else if eq .Name \"pwsh\" }}\uebc7{{ else if eq .Name \"powershell\" }}\uebc7{{ else }}{{ .Name }}{{ end }} ",
+          "type": "shell"
+        },
+        {
           "background": "#458588",
           "foreground": "#282828",
           "powerline_symbol": "\ue0b4",
