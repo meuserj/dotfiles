@@ -359,7 +359,7 @@ function vi-session {
 # setprompt
 uname=$(uname)
 if [ "$TERM" != "dumb" ]; then
-    source $HOME/.shellprompt.sh
+    # source $HOME/.shellprompt.sh
     source $HOME/.gitdotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
     if command -v lsd >/dev/null
     then
@@ -417,7 +417,7 @@ then
     fi
 fi
 
-
+eval "$(oh-my-posh init zsh --config ~/.gitdotfiles/gruvbox.omp.json)"
 
 # Kiro CLI post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
