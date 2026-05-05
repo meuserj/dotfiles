@@ -24,6 +24,9 @@
           "foreground": "#282828",
           "powerline_symbol": "\ue0b4",
           "options": {
+            "folder_icon": "\uf115",
+            "folder_separator_icon": " \ue0b5 ",
+            "home_icon": "\ueb06",
             "style": "agnoster"
           },
           "style": "powerline",
