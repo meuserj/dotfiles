@@ -30,8 +30,16 @@
             "style": "agnoster"
           },
           "style": "powerline",
-          "template": " {{ .Path }} ",
+          "template": "{{ if not (eq .Segments.Project.Name .Folder) }} {{ .Path }} {{ end }}",
           "type": "path"
+        },
+        {
+          "type": "project",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b4",
+          "foreground": "#282828",
+          "background": "#d79921",
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Version }} {{.Version}}{{ end }} {{ if .Name }}{{ .Name }}{{ end }}{{ end }} "
         },
         {
           "background": "#98971A",
@@ -56,14 +64,6 @@
           "type": "git"
         },
         {
-          "type": "project",
-          "style": "powerline",
-          "powerline_symbol": "\ue0b4",
-          "foreground": "#282828",
-          "background": "#d79921",
-          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Version }} {{.Version}}{{ end }} {{ if .Name }}{{ .Name }}{{ end }}{{ end }} "
-        },
-        {
           "background": "#83a598",
           "foreground": "#282828",
           "powerline_symbol": "\ue0b4",
@@ -86,12 +86,24 @@
           "type": "julia"
         },
         {
+          "type": "node",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b4",
+          "options": {
+            "fetch_version": false
+          },
+          "foreground": "#282828",
+          "background": "#98971a",
+          "template": "  {{ .Full }} "
+        },
+        {
           "background": "#fabd2f",
           "foreground": "#282828",
           "powerline_symbol": "\ue0b4",
           "options": {
             "display_mode": "files",
-            "fetch_virtual_env": false
+            "fetch_virtual_env": false,
+            "fetch_version": false
           },
           "style": "powerline",
           "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
@@ -108,17 +120,6 @@
           "style": "powerline",
           "template": " \ue791 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
           "type": "ruby"
-        },
-        {
-          "type": "node",
-          "style": "powerline",
-          "powerline_symbol": "\ue0b4",
-          "options": {
-            "fetch_version": false
-          },
-          "foreground": "#282828",
-          "background": "#689d6a",
-          "template": "  {{ .Full }} "
         },
         {
           "background": "#fe8019",
