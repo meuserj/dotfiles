@@ -94,7 +94,7 @@
           },
           "foreground": "#282828",
           "background": "#98971a",
-          "template": "  {{ .Full }} "
+          "template": "  {{ .Full }}"
         },
         {
           "background": "#fabd2f",
