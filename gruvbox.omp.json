@@ -157,6 +157,26 @@
         }
       ],
       "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "status",
+          "style": "diamond",
+          "foreground": "#ffffff",
+          "background": "#00897b",
+          "background_templates": [
+            "{{ if .Error }}#e91e63{{ end }}"
+          ],
+          "leading_diamond": "\ue0b6",
+          "template": "{{ if eq .Code 0 }}\uf00c{{ else }}\uf071 {{ reason .Code }}{{ end }}",
+          "options": {
+            "always_enabled": false
+          }
+        }
+      ],
+      "type": "rprompt"
     }
   ],
   "console_title_template": "{{ .Folder }}",
