@@ -246,7 +246,10 @@ unalias fd
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-if command -v alacritty >/dev/null
+if command -v ghostty >/dev/null
+then
+    alias a='ghostty -e'
+elif command -v alacritty >/dev/null
 then
     alias a='alacritty msg create-window -e'
 fi
